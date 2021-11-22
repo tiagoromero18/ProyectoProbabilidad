@@ -131,4 +131,132 @@ graficoVictimas <- data.frame(
 ggplot(graficoVictimas,aes(x=Victimas, y=val)) + 
   geom_bar(stat = "identity",color="green",fill="lightgreen")
 
+library(chron)
+
+hours <- chron(times=data[,2])
+
+hours
+table(hours(hours))
+hours[1]
+
+data[,"franja"] <- ifelse(hours(hours)<=5,"Madrugada",
+                          ifelse(hours(hours)<=12,"Mañana",
+                                 ifelse(hours(hours)<=18,"Tarde","Noche")))
+
+
+table(data[,"franja"])
+barplot(table(data[,"franja"]))
+boxplot(hours(hours))
+
+#################################esto de abajo esta choneto pero lo dejo 
+#################################para que vean que en 11 lineas sale todo lo de abajo
+# count <- 1
+# cero <- 0
+# una <- 0
+# dos <- 0
+# tres <- 0
+# cuatro <- 0
+# cinco <- 0
+# seis <- 0
+# siete <- 0
+# ocho <- 0
+# nueve <- 0
+# diez <- 0
+# once <- 0
+# doce <- 0
+# trece <- 0
+# catorce <- 0
+# quince <- 0
+# dieciseis <- 0
+# diecisiete <- 0
+# dieciocho <- 0
+# diecinueve <- 0
+# veinte <- 0
+# veintiuno <- 0
+# veintidos <- 0
+# veintitres <- 0 
+# veinticuatro <- 0
+# noaplica <- 0
+# 
+# for (i in 1:473)
+#   if (hours(hours[count]) == 0){
+#     cero <- cero+1
+#     count <- count+1
+#   }else if (hours(hours[count]) == 1){
+#     una <- una+1
+#     count <- count+1
+#   }else if (hours(hours[count]) == 2){
+#     dos <- dos+1
+#     count <- count+1
+#   }else if (hours(hours[count]) == 3){
+#     tres <- tres+1
+#     count <- count+1
+#   }else if (hours(hours[count]) == 4){
+#     cuatro <- cuatro+1
+#     count <- count+1
+#   }else if (hours(hours[count]) == 5){
+#     cinco <- cinco+1
+#     count <- count+1
+#   }else if (hours(hours[count]) == 6){
+#     seis <- seis+1
+#     count <- count+1
+#   }else if (hours(hours[count]) == 7){
+#     siete <- siete+1
+#     count <- count+1
+#   }else if (hours(hours[count]) == 8){
+#     ocho <- ocho+1
+#     count <- count+1
+#   }else if (hours(hours[count]) == 9){
+#     nueve <- nueve+1
+#     count <- count+1
+#   }else if (hours(hours[count]) == 10){
+#     diez <- diez+1
+#     count <- count+1
+#   }else if (hours(hours[count]) == 11){
+#     once <- once+1
+#     count <- count+1
+#   }else if (hours(hours[count]) == 12){
+#     doce <- doce+1
+#     count <- count+1
+#   }else if (hours(hours[count]) == 13){
+#     trece <- trece+1
+#     count <- count+1
+#   }else if (hours(hours[count]) == 14){
+#     catorce <- catorce+1
+#     count <- count+1
+#   }else if (hours(hours[count]) == 15){
+#     quince <- quince+1
+#     count <- count+1
+#   }else if (hours(hours[count]) == 16){
+#     dieciseis <- dieciseis+1
+#     count <- count+1
+#   }else if (hours(hours[count]) == 17){
+#     diecisiete <- diecisiete+1
+#     count <- count+1
+#   }else if (hours(hours[count]) == 18){
+#     dieciocho <- dieciocho+1
+#     count <- count+1
+#   }else if (hours(hours[count]) == 19){
+#     diecinueve <- diecinueve+1
+#     count <- count+1
+#   }else if (hours(hours[count]) == 20){
+#     veinte <- veinte+1
+#     count <- count+1
+#   }else if (hours(hours[count]) == 21){
+#     veintiuno <- veintiuno+1
+#     count <- count+1
+#   }else if (hours(hours[count]) == 22){
+#     veintidos <- veintidos+1
+#     count <- count+1
+#   }else if (hours(hours[count]) == 23){
+#     veintitres <- veintitres+1
+#     count <- count+1
+#   }else if (hours(hours[count]) == 24){
+#     veinticuatro <- veinticuatro+1
+#     count <- count+1
+#   }else{
+#     noaplica<-noaplica+1
+#     count <- count+1
+#   }
+
 
