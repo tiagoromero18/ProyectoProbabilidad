@@ -1,6 +1,6 @@
 library(ggplot2)
 
-data <- read.csv(file = '/home/laura/Desktop/univ/univ2021-2/Proba/proyecto/Muertes_Accidentes_Transito.csv')
+data <- read.csv(file = 'path of database')
 
 
 # TABLA ANÁLISIS POR EDAD 
